@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+
+<h1> Home </h1>
+<p>  <%= homeContent %> </p>
+<!-- ----------------------------------- Method 1 for Outputing Keys and values from array ----------------------------------- -->
+<!-- <% for(var i=0; i < postsVar.length;i++){   %>
+  <%  console.log(postsVar[i].title);       %>
+
+<% }; %> -->
+<!-- --------------------------Method 2 ----------------------------------------------- -->
+<!-- <% postsVar.forEach(OutputVar => console.log(OutputVar.title)) %> -->
+<!-- --------------------------Method 3 ----------------------------------- -->
+<!-- <% postsVar.forEach(function(OutputVar){  %> </h1>
+    <%  console.log(OutputVar.title); %>
+<% })  %> -->
+    <% postsVar.forEach(function(OutputVar){%>
+       <h1> <%= OutputVar.title %> </h1>   <!-- Title coming from app.js (posts array)  -->
+       <p> <%= (OutputVar.post).substring(0,100) + "..." %> </p>
+        <a href="/posts/<%= OutputVar.title %>" > Read More</a>
+     <% }) %>
+     <!-- console.log(`Fifteen is ${a + b}.`); -->
+
+
+<%- include('partials/footer'); -%>
